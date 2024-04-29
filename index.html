@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>New York Times</title>
+</head>
+    <body>
+        <div class="filter-container">
+            <div class="filter-title">Filter</div>
+            <form class="sort-by">
+                <div>
+                    <label for="sort-type" class="sort-by-title">Sort By:</label> <br>
+                    <div class="radio-options">
+                        <div>
+                            <label for="most-viewed">Most Viewed</label>
+                            <input type="radio" name="sort-type" id="most-viewed">
+                        </div>
+    
+                        <div>
+                            <label for="most-shared">Most Shared</label>
+                            <input type="radio" name="sort-type" id="most-shared">
+                        </div>
+                        
+                        <div>
+                            <label for="most-emailed">Most Emailed</label>
+                            <input type="radio" name="sort-type" id="most-emailed">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <form class="time-frame">
+                <div>
+                    <label for="time-type" class="time-frame-title">Time Frame:</label> <br>
+                    <div class="radio-options">
+                        <div>
+                            <label for="day">Day</label>
+                            <input type="radio" name="time-type" id="day">
+                        </div>
+    
+                        <div>
+                            <label for="week">Week</label>
+                            <input type="radio" name="time-type" id="week">
+                        </div>
+                        
+                        <div>
+                            <label for="month">Month</label>
+                            <input type="radio" name="time-type" id="month">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <script src="main.js"></script>
+    </body>
+</html>

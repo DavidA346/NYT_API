@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(36,36,36);
+    padding-top: 50px;
+}
+
+.filter-container{
+    background-color: white;
+    height: 260px;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.filter-title {
+    font-weight: bolder;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.sort-by {
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+
+.sort-by-title {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    float: left;
+    margin-right: 10px;
+}
+
+.radio-options {
+    font-size: 14px;
+    padding-top: 8px;
+    font-weight: lighter;
+}
+
+.time-frame {
+    padding-left: 25px;
+}
+
+.time-frame-title {
+    font-weight: bolder;
+    font-size: 16px;
+}
