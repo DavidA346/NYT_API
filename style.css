@@ -3,6 +3,12 @@ body {
     padding-top: 50px;
 }
 
+.main-content {
+    display: flex;
+    gap: 50px;
+}
+
+/* Left Container Styling */
 .filter-container{
     background-color: white;
     height: 260px;
@@ -46,3 +52,58 @@ input[type="radio"] {
     font-weight: bolder;
     font-size: 16px;
 }
+
+/* Right Container Styling */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+    padding-top: 10px;
+    gap: 20px;
+}
+
+.first-card {
+    background-color: grey;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.second-card {
+    background-color: grey;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.third-card {
+    background-color: grey;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.fourth-card {
+    background-color: grey;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.fifth-card {
+    background-color: grey;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Allows for screen to be adjusted when less than 900 pixels */
+@media screen and (max-width: 900px) {
+    .main-content {
+      display: block;
+    }
+
+    .filter-container,
+    .news-container {
+        margin: auto;
+    }
+
+    .filter-container{
+        margin-bottom: 70px;
+    }
+  }
