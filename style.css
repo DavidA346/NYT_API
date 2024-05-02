@@ -62,34 +62,49 @@ input[type="radio"] {
     gap: 20px;
 }
 
-.first-card {
+.card {
     background-color: grey;
-    height: 100px;
+    height: auto;
     border-radius: 10px;
+    padding: 10px;
+    padding-top: 15px;
 }
 
-.second-card {
-    background-color: grey;
-    height: 100px;
-    border-radius: 10px;
+.card-top-content {
+    display: flex;
+    justify-content: space-between;
 }
 
-.third-card {
-    background-color: grey;
-    height: 100px;
-    border-radius: 10px;
+.card-title {
+    font-weight: bold;
+    font-size: large;
+    padding-bottom: 10px;
+    width: 93.9%;
 }
 
-.fourth-card {
-    background-color: grey;
-    height: 100px;
-    border-radius: 10px;
+.card-date {
+    font-weight: lighter;
+    font-size: 12px;
+    color: #343434;
+    padding-right: 5px;
 }
 
-.fifth-card {
-    background-color: grey;
-    height: 100px;
-    border-radius: 10px;
+.card-bottom-content {
+    display: flex;
+}
+
+.card-image img {
+    display: block;
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card-text {
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #1B1212;
 }
 
 /* Allows for screen to be adjusted when less than 900 pixels */
