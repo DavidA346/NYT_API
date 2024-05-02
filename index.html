@@ -16,17 +16,17 @@
                     <div class="radio-options">
                         <div>
                             <label for="most-viewed">Most Viewed</label>
-                            <input type="radio" name="sort-type" id="most-viewed">
+                            <input type="radio" name="sort-type" id="most-viewed" onclick="getResponse()">
                         </div>
     
                         <div>
                             <label for="most-shared">Most Shared</label>
-                            <input type="radio" name="sort-type" id="most-shared">
+                            <input type="radio" name="sort-type" id="most-shared" onclick="getResponse()">
                         </div>
                         
                         <div>
                             <label for="most-emailed">Most Emailed</label>
-                            <input type="radio" name="sort-type" id="most-emailed">
+                            <input type="radio" name="sort-type" id="most-emailed" onclick="getResponse()">
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,62 @@
         </div>
 
         <div class="news-container">
-            <div class="first-card"></div>
-            <div class="second-card"></div>
-            <div class="third-card"></div>
-            <div class="fourth-card"></div>
-            <div class="fifth-card"></div>
+
+            <div class="card" id="first-card">
+                <div class="card-top-content">
+                    <div class="card-title" id="first-card-title"></div>
+                    <div class="card-date" id="first-card-date"></div>
+                </div>
+                <div class="card-bottom-content">
+                    <div class="card-image" id="first-card-image"></div>
+                    <div class="card-text" id="first-card-text"></div>
+                </div>
+            </div>
+
+            <div class="card" id="second-card">
+                <div class="card-top-content">
+                    <div class="card-title" id="second-card-title"></div>
+                    <div class="card-date" id="second-card-date"></div>
+                </div>
+                <div class="card-bottom-content">
+                    <div class="card-image" id="second-card-image"></div>
+                    <div class="card-text" id="second-card-text"></div>
+                </div>
+            </div>
+
+            <div class="card" id="third-card">
+                <div class="card-top-content">
+                    <div class="card-title" id="third-card-title"></div>
+                    <div class="card-date" id="third-card-date"></div>
+                </div>
+                <div class="card-bottom-content">
+                    <div class="card-image" id="third-card-image"></div>
+                    <div class="card-text" id="third-card-text"></div>
+                </div>
+            </div>
+
+            <div class="card" id="fourth-card">
+                <div class="card-top-content">
+                    <div class="card-title" id="fourth-card-title"></div>
+                    <div class="card-date" id="fourth-card-date"></div>
+                </div>
+                <div class="card-bottom-content">
+                    <div class="card-image" id="fourth-card-image"></div>
+                    <div class="card-text" id="fourth-card-text"></div>
+                </div>
+            </div>
+
+            <div class="card" id="fifth-card">
+                <div class="card-top-content">
+                    <div class="card-title" id="fifth-card-title"></div>
+                    <div class="card-date" id="fifth-card-date"></div>
+                </div>
+                <div class="card-bottom-content">
+                    <div class="card-image" id="fifth-card-image"></div>
+                    <div class="card-text" id="fifth-card-text"></div>
+                </div>
+            </div>
+            
         </div>
     </div>
         
