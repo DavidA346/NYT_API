@@ -52,22 +52,31 @@ async function getResponse() {
         const data = await response.json();
         console.log(data);
 
-        for (let k = 0; k < 5; k++) {
-            const articleTitle = data.results[k].title;
-            const firstCardTitle = document.getElementById(k+"-card-title");
-            firstCardTitle.innerHTML = (k+1)+") " + articleTitle;
+        let count = 0;
+        for (let r = 0; r < data.results.length; r++) {
+            if (count == 5)
+                break;
+            try {
+                const articleImageURL = data.results[r].media[0]["media-metadata"][0].url;
+                const firstCardImage = document.getElementById(r+"-card-image");
+                firstCardImage.innerHTML = "<img src=" + articleImageURL + ">"
+            }
+            catch (error) {
+                console.log(error);
+                continue;
+            }
+            const articleTitle = data.results[r].title;
+            const firstCardTitle = document.getElementById(r+"-card-title");
+            firstCardTitle.innerHTML = (r+1)+") " + articleTitle;
             
-            const articleDate = new Date(data.results[k].published_date).toISOString().slice(0, 10);
-            const firstCardDate = document.getElementById(k+"-card-date");
+            const articleDate = new Date(data.results[r].published_date).toISOString().slice(0, 10);
+            const firstCardDate = document.getElementById(r+"-card-date");
             firstCardDate.innerHTML = articleDate;
-
-            const articleImageURL = data.results[k].media[0]["media-metadata"][0].url;
-            const firstCardImage = document.getElementById(k+"-card-image");
-            firstCardImage.innerHTML = "<img src=" + articleImageURL + ">"
-
-            const articleAbstract = data.results[k].abstract;
-            const firstCardAbstract = document.getElementById(k+"-card-text");
+            
+            const articleAbstract = data.results[r].abstract;
+            const firstCardAbstract = document.getElementById(r+"-card-text");
             firstCardAbstract.innerHTML = articleAbstract;
+            count += 1;
         }
     
     } 
