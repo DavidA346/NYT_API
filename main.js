@@ -10,6 +10,14 @@ async function getResponse() {
             sortOption = 'viewed'; 
             console.log("Most option = " + sortOption);
         }
+        else if (i == 1 && mostFilter[i].checked) {
+            sortOption = 'shared'; 
+            console.log("Most option = " + sortOption);
+        }
+        else if (i == 2 && mostFilter[i].checked) {
+            sortOption = 'emailed'; 
+            console.log("Most option = " + sortOption);
+        }
     }
 
     var timeFilter = document.getElementsByName('time-type');
@@ -17,7 +25,15 @@ async function getResponse() {
         if (j == 0 && timeFilter[j].checked){
             timeOption = '/1';
             console.log("Time option = " + timeOption);
-        }    
+        }
+        else if (j == 1 && timeFilter[j].checked){
+            timeOption = '/7';
+            console.log("Time option = " + timeOption);
+        }
+        else if (j == 2 && timeFilter[j].checked){
+            timeOption = '/30';
+            console.log("Time option = " + timeOption);
+        }
     }
     console.log(url);
     console.log(sortOption);
@@ -36,21 +52,23 @@ async function getResponse() {
         const data = await response.json();
         console.log(data);
 
-        const articleTitle = data.results[0].title;
-        const firstCardTitle = document.querySelector("#first-card-title");
-        firstCardTitle.innerHTML = "1) " + articleTitle;
-        
-        const articleDate = new Date(data.results[0].published_date).toISOString().slice(0, 10);
-        const firstCardDate = document.querySelector("#first-card-date");
-        firstCardDate.innerHTML = articleDate;
+        for (let k = 0; k < 5; k++) {
+            const articleTitle = data.results[k].title;
+            const firstCardTitle = document.getElementById(k+"-card-title");
+            firstCardTitle.innerHTML = (k+1)+") " + articleTitle;
+            
+            const articleDate = new Date(data.results[k].published_date).toISOString().slice(0, 10);
+            const firstCardDate = document.getElementById(k+"-card-date");
+            firstCardDate.innerHTML = articleDate;
 
-        const articleImageURL = data.results[0].media[0]["media-metadata"][0].url;
-        const firstCardImage = document.querySelector("#first-card-image");
-        firstCardImage.innerHTML = "<img src=" + articleImageURL + ">"
+            const articleImageURL = data.results[k].media[0]["media-metadata"][0].url;
+            const firstCardImage = document.getElementById(k+"-card-image");
+            firstCardImage.innerHTML = "<img src=" + articleImageURL + ">"
 
-        const articleAbstract = data.results[0].abstract;
-        const firstCardAbstract = document.querySelector("#first-card-text");
-        firstCardAbstract.innerHTML = articleAbstract;
+            const articleAbstract = data.results[k].abstract;
+            const firstCardAbstract = document.getElementById(k+"-card-text");
+            firstCardAbstract.innerHTML = articleAbstract;
+        }
     
     } 
     
